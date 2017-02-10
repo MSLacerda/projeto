@@ -1,0 +1,95 @@
+.logo{
+	text-align:center;
+	margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    transition-duration: 1s;
+}
+
+.logo-min { 
+    transition-duration: 1s;
+    text-align:center;
+	margin: auto;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+
+.contain {
+    z-index: 1 !important;
+
+}
+.invisibletwo{
+    background: transparent !important;
+}
+
+.scroll {
+    margin: auto !important;
+    height: auto !important;
+    margin-bottom: 0px;
+}
+
+.img {
+    transition-delay: 0.2ms;
+    transition-duration: 1s;
+    max-width:200px !important;
+    max-height:150px !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+.img-min {
+    transition-delay: 0.2ms;
+    transition-duration: 1s;
+    max-width:150px !important;
+    max-height:100px !important;
+    width: auto !important;
+    height: auto !important;
+}
+.login{
+    margin: auto !important;
+    margin-top: 1px !important;
+
+}
+
+
+#btnLogin {
+    height: 40px;
+    font-weight: lighter !important;
+    opacity: 0.9;
+}
+
+.input-label {
+    color: white;
+}
+
+#forg {
+    color: white !important;
+}
+
+
+#inputA {   
+    padding-left: 0;
+    border: none;
+}
+
+#lab {
+    color: white;
+    background: transparent;
+    border-top: none;
+    border-bottom: 1px solid lightgrey ;
+}
+
+#lab:focus {
+    transition-duration: 0.2ms;
+    border-bottom: 3px solid white;
+}
+
+
+#log {
+    background-color:#778ba5;
+    background-image: -webkit-linear-gradient(transparent, rgba(63,169,245, 0.5));
+    background-image: -o-linear-gradient(transparent, rgba(63,169,245, 0.5));
+    background-image: linear-gradient(transparent, rgba(63,169,245, 0.5));    
+}
+

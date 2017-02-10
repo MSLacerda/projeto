@@ -1,0 +1,25 @@
+<ion-view view-title="Discussões" >
+	<ion-header-bar class="bar-positive"></ion-header-bar>
+<ion-content ng-controller="HomeCtrl as ctrl">
+<div class="list card" ng-repeat="item in ctrl.c">
+
+	<div class="item item-avatar">
+		<img src="img/user.png">
+		<h2>{{item.user.nome}}</h2>
+		<p>{{ item.criado_em | date: 'dd/MM/yyyy' }}</p>
+	</div>
+
+	<div class="item item-body">
+		<!--<img class="full-image" src="delorean.jpg">-->
+		<p>
+			{{item.mensagem}}
+		</p>
+		<p>
+			<a href="#" class="subdued">{{item.visualizacao}} Views</a>
+			<a href="#" class="subdued">{{item.respostas}} Comentarios</a>
+		</p>
+	</div>
+
+</div>
+<ion-content>
+</ion-view

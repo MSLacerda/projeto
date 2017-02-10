@@ -1,0 +1,40 @@
+<ion-view view-title="Perfil">
+  <ion-header-bar class="bar-positive"></ion-header-bar>
+<ion-content ng-controller="AlunoCtrl as ctrl">
+<div class="list" ng-repeat="aluno in ctrl.b | filter: aluno.id = 4">
+	<a class="item item-thumbnail-left" href="#">
+		<img src="img/user.png">
+		<h2>{{aluno.nome}}</h2>
+		<p>{{aluno.email}}</p>
+	</a>
+</div>
+
+<div class="list">
+
+  <a class="item item-icon-left" href="#/tab/turmas">
+    <i class="ion-android-contacts"></i>
+    Turmas
+    <span class="badge badge-assertive">0</span>
+  </a>
+
+  <a class="item item-icon-left" href="#">
+    <i class="ion-android-attach"></i>
+    Meus Professores
+  </a>
+
+  <a class="item item-icon-left" href="#">
+    <i class="ion-android-create"></i>
+    Editar Perfil
+  </a>
+
+  <a class="item item-icon-left" href="#">
+    <i class="ion-android-settings"></i>
+    Configurações
+    
+  </a>
+
+</div>
+
+
+</ion-content> 
+</ion-view>

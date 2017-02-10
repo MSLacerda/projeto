@@ -1,0 +1,33 @@
+<ion-view align-title="right" id="log">
+    <div ng-controller="LoginCtrl as ctrl" >
+    <div>
+    <ion-content class="contain">
+        <div ng-class=ctrl.login>
+            <img src="img/logo.png" ng-class="ctrl.img">
+        </div>
+        <div class="padding">
+        <ion-list class="list-inset">
+            <label class="item item-input item-stacked-label" id="inputA">
+                <span class="input-label">E-mail</span>
+                <input type="text" ng-focus="ctrl.login = 'logo-min'; ctrl.img = 'img-min'" ng-blur="ctrl.login = 'logo'; ctrl.img = 'img'" id="lab"/>
+             </label>
+            <label class="item item-input item-stacked-label" id="inputA">
+                <span class="input-label">Senha</span>
+                <input type="password" ng-focus="ctrl.login = 'logo-min'; ctrl.img = 'img-min'" ng-blur="ctrl.login = 'logo'; ctrl.img = 'img'" id="lab"/>
+            </label>
+            <div class="padding">
+                <a href="#!" class="subdued" id="forg"><p align="center" > Esqueceu sua senha? </p></a>
+                <a href="#!" class="subdued" id="forg"><p align="center" > Cadastre-se </p></a>
+            </div>
+        </ion-list>
+        </div>
+    </ion-content>
+    </div>
+    <ion-footer-bar align-title="center" class="bar bar-positive" ng-click="ctrl.logar()"id="btnLogin">
+                <h4 class="title login">
+                    <p ng-show="ctrl.name"> ENTRAR</p>
+                    <ion-spinner ng-show="ctrl.entrar" icon="ripple"></ion-spinner>
+                </h4>
+    </ion-footer-bar>
+    </div>
+</ion-view>
