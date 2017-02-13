@@ -28,7 +28,12 @@ angular.module('projeto.controller', [])
 		self.entrar = false;
 		self.name = true;
 
+		self.usuario = {};
+
 		self.logar = function () {
+
+			$http.post('');
+
 			self.entrar = true;
 			self.name = false;
 			$timeout(
