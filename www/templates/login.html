@@ -9,11 +9,11 @@
         <ion-list class="list-inset">
             <label class="item item-input item-stacked-label" id="inputA">
                 <span class="input-label">E-mail</span>
-                <input type="text" ng-model="usuario.email" ng-focus="ctrl.login = 'logo-min'; ctrl.img = 'img-min'" ng-blur="ctrl.login = 'logo'; ctrl.img = 'img'" id="lab"/>
+                <input type="text" ng-model="ctrl.usuario.username" ng-focus="ctrl.login = 'logo-min'; ctrl.img = 'img-min'" ng-blur="ctrl.login = 'logo'; ctrl.img = 'img'" id="lab"/>
              </label>
             <label class="item item-input item-stacked-label" id="inputA">
                 <span class="input-label">Senha</span>
-                <input type="password" ng-model="usuario.senha" ng-focus="ctrl.login = 'logo-min'; ctrl.img = 'img-min'" ng-blur="ctrl.login = 'logo'; ctrl.img = 'img'" id="lab"/>
+                <input type="password" ng-model="ctrl.usuario.password" ng-focus="ctrl.login = 'logo-min'; ctrl.img = 'img-min'" ng-blur="ctrl.login = 'logo'; ctrl.img = 'img'" id="lab"/>
             </label>
             <div class="padding">
                 <a href="#!" class="subdued" id="forg"><p align="center" > Esqueceu sua senha? </p></a>
@@ -23,7 +23,7 @@
         </div>
     </ion-content>
     </div>
-    <ion-footer-bar align-title="center" class="bar bar-positive" ng-click="ctrl.logar()"id="btnLogin">
+    <ion-footer-bar align-title="center" class="bar bar-positive" ng-click="ctrl.logar(ctrl.usuario)"id="btnLogin">
                 <h4 class="title login">
                     <p ng-show="ctrl.name">Entrar</p>
                     <ion-spinner ng-show="ctrl.entrar" icon="ripple"></ion-spinner>
