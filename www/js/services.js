@@ -31,4 +31,21 @@ angular.module('projeto.services', [])
 
       }
     }
+  }])
+  
+  .factory('GetLogin', ['$http', function ($http, usuario) {
+    var baseUrl = "localhost:8000/api";
+    return {
+
+      data: function () {
+
+        return $http.get(baseUrl + "/alunos/?email=" + usuario.email);
+
+      }
+
+    }
+
   }]);
+
+
+  ;

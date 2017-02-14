@@ -3,7 +3,8 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('projeto', ['projeto.controller','projeto.services','ionic'])
+var db = null
+angular.module('projeto', ['projeto.controller','projeto.services','ionic','ngCordova'])
 
 .config(function ($stateProvider, $urlRouterProvider){
 
@@ -59,7 +60,10 @@ angular.module('projeto', ['projeto.controller','projeto.services','ionic'])
 
 })
 
-.run(function($ionicPlatform) {
+
+
+.run(function($ionicPlatform, $cordovaSQLite) {
+  
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -74,6 +78,18 @@ angular.module('projeto', ['projeto.controller','projeto.services','ionic'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+
+    if(window.cordova) {
+      db = $cordovaSQLite.openDB({name: "usuario.db"});
+    }else{
+      db = window.openDatabase('usuario.db', '1', 'Usuarios DB', 200000);
+      console.log('db criado no navegador');
+    }
+
+    $cordovaSQLite.execute(db, 'CREATE TABLE IF NOT EXISTS usuario (id integer primary key, nome varchar, email varchar)').then(function () {
+      console.log("tabela criada");
+    });
+
   });
 });
 

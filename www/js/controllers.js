@@ -20,7 +20,7 @@ angular.module('projeto.controller', [])
 			self.c = resp.results;
 		});
 
-	}]).controller('LoginCtrl', ['$timeout','$location','$ionicScrollDelegate', function ($timeout, $location,$ionicScrollDelegate) {
+	}]).controller('LoginCtrl', ['$timeout','$location','$ionicScrollDelegate','GetLogin', function ($timeout, $location,$ionicScrollDelegate, GetLogin) {
 		var self = this;
 
 		self.login = 'logo';
@@ -31,17 +31,8 @@ angular.module('projeto.controller', [])
 		self.usuario = {};
 
 		self.logar = function () {
-
-			$http.post('');
-
-			self.entrar = true;
-			self.name = false;
-			$timeout(
-				function () {
-					$location.path('/tab/home') ;
-				}
-			, 2000);
-			}
+			
+		}
 
 		self.scrollMainToTop = function () {
 			$ionicScrollDelegate.$getByHandle('mainScroll').scrollTop();
