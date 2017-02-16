@@ -86,7 +86,7 @@ angular.module('projeto', ['projeto.controller','projeto.services','ionic','ngCo
       console.log('db criado no navegador');
     }
 
-    $cordovaSQLite.execute(db, 'CREATE TABLE IF NOT EXISTS info_user (id integer auto_increment primary key, nome text, email text)').then(function () {
+    $cordovaSQLite.execute(db, 'CREATE TABLE IF NOT EXISTS info_user (id integer auto_increment primary key, token text, email text)').then(function () {
       console.log("tabela criada");
     });
 
