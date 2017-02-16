@@ -20,7 +20,7 @@ angular.module('projeto.controller', [])
 			self.c = resp.results;
 		});
 
-	}]).controller('LoginCtrl', ['$timeout','$location','$ionicScrollDelegate','GetLogin', function ($timeout, $location,$ionicScrollDelegate, GetLogin) {
+	}]).controller('LoginCtrl', ['$cordovaSQLite','$timeout','$location','$ionicScrollDelegate','GetLogin', function ($cordovaSQLite,$timeout, $location,$ionicScrollDelegate, GetLogin) {
 		var self = this;
 
 		self.login = 'logo';
@@ -28,10 +28,25 @@ angular.module('projeto.controller', [])
 		self.entrar = false;
 		self.name = true;
 
+		self.user = {};
+		self.execute = function() {
+   			var query = "INSERT INTO info_user (token, email) VALUES (?,?)";
+    		$cordovaSQLite.execute(db, query, [token, self.user.email]).then(function(res) {
+    	  		console.log("insertId: " + res.insertId);
+    		}, function (err) {
+      			console.error(err);
+    		});
+  		};
+
+
 		self.logar = function (usuario) {
-				GetLogin.data().success(function (res) {
-					token = res.token;
-					console.log(token);
+				GetLogin.data(usuario).then(function (res) {
+					token = res.data.token;
+					self.user = res.data.user;
+					self.execute();
+				},
+				function (err) {
+					console.log(err);
 				});
 		}
 

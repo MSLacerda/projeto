@@ -82,11 +82,11 @@ angular.module('projeto', ['projeto.controller','projeto.services','ionic','ngCo
     if(window.cordova) {
       db = $cordovaSQLite.openDB({name: "usuario.db"});
     }else{
-      db = window.openDatabase('usuario.db', '1', 'Usuarios DB', 200000);
+      db = window.openDatabase('usuario.db', '1', 'Usuario DB', 200000);
       console.log('db criado no navegador');
     }
 
-    $cordovaSQLite.execute(db, 'CREATE TABLE IF NOT EXISTS usuario (id integer primary key, nome varchar, email varchar)').then(function () {
+    $cordovaSQLite.execute(db, 'CREATE TABLE IF NOT EXISTS info_user (id integer auto_increment primary key, nome text, email text)').then(function () {
       console.log("tabela criada");
     });
 
